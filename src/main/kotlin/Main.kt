@@ -1,4 +1,5 @@
 import com.madgag.gif.fmsware.AnimatedGifEncoder
+import data.Profile
 import java.awt.Color
 import java.awt.Image
 import java.awt.image.BufferedImage
@@ -66,11 +67,5 @@ import javax.imageio.ImageIO
 //}
 
 fun main() {
-    val outputPath: String = "${System.getProperty("user.dir")}\\cache\\output.gif"
-    val t = outputPath.split("\\")
-    val len = t.size
-
-    val outputDir = t.filterIndexed { index, _ -> index != len - 1  }.joinToString("\\")
-
-    println(outputDir)
+    println(Profile.profile.delay)
 }

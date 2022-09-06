@@ -2,6 +2,7 @@ package service
 
 import com.madgag.gif.fmsware.AnimatedGifEncoder
 import data.OverlayData
+import data.Profile
 import java.awt.image.BufferedImage
 import java.io.File
 
@@ -9,7 +10,7 @@ import java.io.File
  * 处理图像的主体
  */
 class ImageDealer(
-    dataSourcePath: String,
+    dataSourcePath: List<String> = listOf(),
     outputPath: String = "${System.getProperty("user.dir")}\\cache\\output.gif",
     pasteImage: BufferedImage
 ) {
@@ -32,6 +33,7 @@ class ImageDealer(
         }
 
         encoder.start(outputPath)
+        encoder.setRepeat(Profile.profile.repeat)
     }
 
     private fun generatorFrame(data: OverlayData) {

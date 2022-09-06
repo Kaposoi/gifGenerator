@@ -11,7 +11,7 @@ object SourceParser {
     /**
      * 根据图像路径返回得到的图像对象
      */
-    fun getBufferedImage(path: String): BufferedImage? {
+    fun getBufferedImage(path: String): BufferedImage {
         return ImageIO.read(File(path))
     }
 }
