@@ -6,5 +6,6 @@ data class SourceData(
     val type: String,
     val avatar: List<Avatar>,
     val text: List<String>,
-    val imageNum: Int
+    val imageNum: Int,
+    val delay: Int
 )

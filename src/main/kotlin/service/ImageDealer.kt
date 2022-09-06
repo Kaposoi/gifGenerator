@@ -89,7 +89,7 @@ class ImageDealer(
         when (sourceData.imageNum) {
             1 -> {
                 for ((index, e) in sourceData.avatar[0].pos.withIndex()) {
-                    encoder.setDelay(Profile.profile.delay)
+                    encoder.setDelay(sourceData.delay)
                     encoder.addFrame(generatorFrame(sourceData.width, sourceData.height, e, index))
                 }
             }
