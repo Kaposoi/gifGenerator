@@ -15,11 +15,16 @@ import java.io.File
  */
 class ImageDealer(
     private val sourceName: String,
-    private val outputPath: String = "${System.getProperty("user.dir")}\\cache\\output.gif",
+    private val outputPathDir: String = "${System.getProperty("user.dir")}\\cache",
     private val pasteImagePath: String = "${System.getProperty("user.dir")}\\cache\\in.jpg"
 ) {
     private val userDir = System.getProperty("user.dir")
     private val dataSourcePath = "${userDir}\\source\\${sourceName}"
+
+    private val sourceData = GsonUtils.gson.fromJson(File("${dataSourcePath}\\data.json").readText(), SourceData::class.java)
+
+    // 指定输出文件的路径， 生成的文件格式由data.json配置
+    private val outputPath = "${outputPathDir}\\output.${sourceData.type.lowercase()}"
 
     // 初始化一个编码器
     private var encoder = AnimatedGifEncoder()
@@ -83,9 +88,11 @@ class ImageDealer(
         return newImage
     }
 
-    fun generatorFrames() {
-        val sourceData = GsonUtils.gson.fromJson(File("${dataSourcePath}\\data.json").readText(), SourceData::class.java)
-
+    /**
+     * 如果返回的图片是gif, 则调用此方法, 返回图片的类型由sourceData的type字段进行配置
+     * @see SourceData.type
+     */
+    private fun generatorFrames() {
         when (sourceData.imageNum) {
             1 -> {
                 for ((index, e) in sourceData.avatar[0].pos.withIndex()) {
@@ -97,5 +104,26 @@ class ImageDealer(
         }
 
         encoder.finish()
+    }
+
+    /**
+     * 生成指定格式的图片, 当生成图片不是gif时调用此函数, 此时source图片只有一张
+     */
+    private fun generatorFormatImage(format: String) {
+
+    }
+
+    /**
+     * 根据图像的返回类型生成图像
+     */
+    fun generator() {
+        when(sourceData.type.lowercase()) {
+            "gif" -> {
+                generatorFrames()
+            }
+            "png" -> {
+
+            }
+        }
     }
 }
