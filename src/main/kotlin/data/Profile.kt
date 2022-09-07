@@ -1,6 +1,5 @@
 package data
 
-import data.content.GifGeneratorConfig
 import utils.GsonUtils
 import java.io.File
 

@@ -1,4 +1,4 @@
-package data.content
+package data
 
 class GifGeneratorConfig {
     /**

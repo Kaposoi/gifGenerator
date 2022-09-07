@@ -6,5 +6,5 @@ data class TextContent(
     val color: String,
     val font: String,
     val size: Int,
-    val align: String
+    val align: String = "CENTER"
 )

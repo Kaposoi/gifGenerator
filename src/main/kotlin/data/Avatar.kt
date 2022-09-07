@@ -5,8 +5,10 @@ data class Avatar(
     val type: String,
 
     val pos: List<List<Int>>,
-    val useRotate: Boolean = false,
 
     // 默认情况是paste图在下， 而原图在上， 这个开关将paste图覆盖在原图之上
-    val avatarOnTop: Boolean = false
+    val avatarOnTop: Boolean = false,
+
+    // 用于指示是否使用圆形图像
+    val circle: Boolean = false
 )

@@ -1,9 +1,12 @@
+import data.DealerConfig
 import service.ImageDealer
 
 fun main() {
     val dir = System.getProperty("user.dir")
 
-//    ImageDealer("kurumi",
-//        "${dir}\\cache\\output.gif",
-//        "${dir}\\cache\\in.jpg").generatorFrames()
+    ImageDealer(
+        DealerConfig("anyasuki",
+        "${dir}\\cache",
+        listOf("${dir}\\cache\\in.jpg"))
+    ).generator()
 }
