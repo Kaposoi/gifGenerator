@@ -139,9 +139,13 @@ class ImageDealer(config: DealerConfig) {
                     graphics.drawImage(sourceImage, 0, 0, sourceImage.width, sourceImage.height, null)
                 }
 
-                graphics.drawImage(resizeImage(toImage, pos[2], pos[3]), pos[0], pos[1], pos[2], pos[3], null)
+                if (pos[2] != 0) {
+                    graphics.drawImage(resizeImage(toImage, pos[2], pos[3]), pos[0], pos[1], pos[2], pos[3], null)
+                }
             } else {
-                graphics.drawImage(resizeImage(toImage, pos[2], pos[3]), pos[0], pos[1], pos[2], pos[3], null)
+                if (pos[2] != 0) {
+                    graphics.drawImage(resizeImage(toImage, pos[2], pos[3]), pos[0], pos[1], pos[2], pos[3], null)
+                }
 
                 if (idx == imageNum - 1) {
                     graphics.drawImage(sourceImage, 0, 0, sourceImage.width, sourceImage.height, null)

@@ -1,0 +1,19 @@
+{
+    "width": 475,
+    "height": 500,
+    "type": "png",
+    "avatar": [{
+        "type": "TO",
+        "pos": [[106,72,305,235,0]],
+        "circle": false,
+        "avatarOnTop": false
+    }],
+    "text": [{
+        "text": "阿尼亚喜欢西油",
+        "pos": [115,460],
+        "color": "#ffffff",
+        "font": "MiSans Bold",
+        "size": 40,
+        "align": "CENTER"
+    }]
+}

@@ -1,0 +1,11 @@
+{
+    "width": 180,
+    "height": 180,
+    "type": "png",
+    "avatar": [{
+        "type": "TO",
+        "pos": [[0,0,180,180]],
+        "avatarOnTop": false
+    }],
+    "text": []
+}

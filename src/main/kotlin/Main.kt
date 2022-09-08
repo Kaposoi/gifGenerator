@@ -5,8 +5,8 @@ fun main() {
     val dir = System.getProperty("user.dir")
 
     ImageDealer(
-        DealerConfig("anyasuki",
+        DealerConfig("wallpaper",
         "${dir}\\cache",
-        listOf("${dir}\\cache\\in.jpg"))
+        listOf("${dir}\\cache\\in.png"))
     ).generator()
 }
