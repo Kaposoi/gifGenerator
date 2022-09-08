@@ -6,7 +6,7 @@ fun main() {
 
     ImageDealer(
         DealerConfig("wallpaper",
-        "${dir}\\cache",
-        listOf("${dir}\\cache\\in.png"))
+            "${dir}\\cache",
+            listOf("${dir}\\cache\\in.png"))
     ).generator()
 }
